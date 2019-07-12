@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+color: black;
+}
+.campo{
+margin: 20px;
+
+
+}
+#cabecalho{
+margin: auto;
+width: 1500px;
+
+
+
+}
+#principal{
+margin: auto;
+width: 600px;
+border: 3px solid black;
+}
+
+
+</style>
+<script type="text/javascript">
+   function validarSenha(){
+senha = document.getElementsByName('senha').value;
+senha2 = document.getElementsByName('senha2').value;
+
+if(senha!= senha2) {
+    senha2.setCustomValidity("Senhas diferentes!");
+} else {
+  senha2.setCustomValidity('');
+}
+        senha.onchange = validatePassword;
+   senha2.onkeyup = validatePassword;
+
+</script>
+<script >
+function alertar(){
+alert('Seus dados serao apagados!');
+}
+
+function ValidaCPF(){   
+
+    var ao_cpf=document.forms.form1.ao_cpf.value; 
+    var cpfValido = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}))$/;     
+    if (cpfValido.test(ao_cpf) == false)    {  
+       //alert("invalido");
+       var valorValido = document.getElementById("ao_cpf").value = "???????";
+    }
+}
+
+
+</script>
+
+</head>
+
+<div id="cabecalho">
+<center>
+<h1>FORMULÁRIO DE CADASTRO</h1> </div> </center>
+<div id="principal">
+<form name="cadastro" action="formConato" method="POST">
+
+<div class="campo">
+<label for="nome">Nome: </label>
+<input type="text" name="nome" size ="20" maxlength="40" />
+</div> 
+
+<div class="campo">
+Email: </b>
+  <input type="email" name="email">
+  
+</div>
+<div class="campo">
+ CPF: <form name="form1">
+<input type="text" name="ao_cpf" id="ao_cpf" placeholder="Ex.: 400.289.654.00" maxlength="14" OnBlur="ValidaCPF();"/>
+</form>
+    <div/>
+
+
+
+<div class="campo">
+Sexo: 
+  <select name="sexo">
+  <option value="Feminino"> Feminino</option>
+   <option value="Masculino">Masculino</option>
+
+</select>
+    <div/>
+    
+
+    <div class= "campo">
+  Módulo: <br>
+  <input type="radio" name="gender" value="male" checked> Primeiro<br>
+  <input type="radio" name="gender" value="female"> Segundo<br>
+  <input type="radio" name="gender" value="other"> Terceiro  
+   
+    </div>
+
+    <div class="campo">
+    Áreas de atuação preferidas: </b> <br>
+<form action="/action_page.php">
+<input type="checkbox" name="areas" value="programacao">Programação
+<br>
+<input type="checkbox" name="areas" value="redes">Redes de computadores 
+<br>
+<input type="checkbox" name="areas" value="redes">Redes de computadores 
+<br><br>
+
+<script>
+function validarSenha(){
+   NovaSenha = document.getElementById('NovaSenha').value;
+   CNovaSenha = document.getElementById('CNovaSenha').value;
+   if (NovaSenha != CNovaSenha) {
+      alert("As senhas não correspondem!\nPor favor, digite a senha correta!"); 
+   }else{
+      document.FormSenha.submit();
+   }
+}
+        </script>
+        </head>
+    <body>
+
+
+            
+                    
+                        <div class="centraliza_reset">
+                            
+                                <div class="row">
+                                <div class="span2"></div>
+                                <div class="span3">Senha:</div>
+                                <div class="span6"><input type="password" maxlength="10" id="NovaSenha" /></div> <br>
+                                </div>
+                                <div class="row">
+                                <div class="span2"></div>
+                                <div class="span3">Confirmar Senha:</div>
+                                <div class="span6"><input type="password" maxlength="10" id="CNovaSenha" /></div>
+                                </div> <br>
+                                <button type="submit" class="btn btn-primary pull-right botao_reset_senha" onClick="validarSenha()">Enviar</button>
+                                <button type="reset" class="btn btn-primary pull-left botao_limpar_senha">Limpar</button>
+                                
+                            
+                        </div>
+                    </form>
+                </div>
+            
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+</form>
+
+
+
+
+</div>
+
+ 
+</body>
+</html>
